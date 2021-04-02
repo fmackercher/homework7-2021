@@ -38,14 +38,16 @@ document.querySelector("#faster").addEventListener("click",
 
 // Skip ahead //
 document.querySelector("#skip").addEventListener("click", function () {
-	console.log("Skip Ahead")
+	console.log("Skip Ahead to " + video.currentTime)
 	video.currentTime += 15;
-	console.log("New location is " + video.currentTime);
-	video.addEventListener("ended", function () {
-		video.currentTime = 0;
+
+	if (video.currentTime >= video.duration) {
+		video.currentTime = 0
+		console.log("Start Again");
 		video.play();
-	})
+	}
 	console.log("New location is " + video.currentTime);
+	video.play();
 });
 
 // Mute //
