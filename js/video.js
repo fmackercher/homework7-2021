@@ -32,7 +32,7 @@ document.querySelector("#slower").addEventListener("click",
 document.querySelector("#faster").addEventListener("click",
 	function () {
 		console.log("Speed Up Video")
-		video.playbackRate *= 1.5;
+		video.playbackRate /= 0.95;
 		console.log("New speed is " + video.playbackRate);
 	});
 
